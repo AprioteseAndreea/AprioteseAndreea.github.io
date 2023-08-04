@@ -1,5 +1,34 @@
 'use strict';
-
+const projects = [
+  {
+    name: "Application for hotel management",
+    category: "Mobile Applications",
+    interval: "Sept 2020 - Jun 2021",
+    technologies: "Flutter, Dart, Firebase, Android Studio",
+    description: "The solution proposed by this application to facilitate the management of a hotel is a cross-platform application that allows, depending on the role of the logged in user to perform different operations such as booking a room, viewing the history, adding reviews, approve reservations, view user or staff profiles, or even view statistics on monthly bookings, receipts or expenses."
+  },
+  {
+    name: "Wellness and fitness App",
+    category: "Mobile Development",
+    interval: "May 2020",
+    technologies: "Java, Android Studio",
+    description: "Aceasta aplicatie a fost creata in scopul..."
+  },
+  {
+    name: "Login & Register & Forgot Password pages",
+    category: "Web Development",
+    interval: "Jun 2023",
+    technologies: "HTML, CSS, JS",
+    description: "Aceasta aplicatie a fost creata in scopul..."
+  },
+  {
+    name: "Online shopping app",
+    category: "Web Development",
+    interval: "Jun 2023 - Jul 2023",
+    technologies: "Java, Android Studio",
+    description: "Aceasta aplicatie a fost creata in scopul..."
+  }
+]
 
 
 // element toggle function
@@ -17,7 +46,7 @@ sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); }
 
 
 // testimonials variables
-const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
+const projectsItem = document.querySelectorAll("[data-projects-item]");
 const modalContainer = document.querySelector("[data-modal-container]");
 const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
@@ -25,6 +54,8 @@ const overlay = document.querySelector("[data-overlay]");
 // modal variable
 const modalImg = document.querySelector("[data-modal-img]");
 const modalTitle = document.querySelector("[data-modal-title]");
+const modalSubtitle = document.querySelector("[data-modal-subtitle]");
+const modalTime = document.querySelector("[data-modal-time]");
 const modalText = document.querySelector("[data-modal-text]");
 
 // modal toggle function
@@ -34,14 +65,15 @@ const testimonialsModalFunc = function () {
 }
 
 // add click event to all modal items
-for (let i = 0; i < testimonialsItem.length; i++) {
+for (let i = 0; i < projectsItem.length; i++) {
 
-  testimonialsItem[i].addEventListener("click", function () {
-
+  projectsItem[i].addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
-    modalTitle.innerHTML = this.querySelector("[data-testimonials-title]").innerHTML;
-    modalText.innerHTML = this.querySelector("[data-testimonials-text]").innerHTML;
+    modalTitle.innerHTML = projects[i].name;
+    modalSubtitle.innerHTML = projects[i].technologies;
+    modalTime.innerHTML = projects[i].interval;
+    modalText.innerHTML = projects[i].description;
 
     testimonialsModalFunc();
 
@@ -52,6 +84,7 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
+
 
 
 
@@ -157,3 +190,4 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
