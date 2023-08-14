@@ -1,49 +1,51 @@
-'use strict';
+"use strict";
 const projects = [
   {
     name: "Application for hotel management",
     category: "Mobile Applications",
     interval: "Sept 2020 - Jun 2021",
     technologies: "Flutter, Dart, Firebase, Android Studio",
-    description: "The solution proposed by this application to facilitate the management of a hotel is a cross-platform application that allows, depending on the role of the logged in user to perform different operations such as booking a room, viewing the history, adding reviews, approve reservations, view user or staff profiles, or even view statistics on monthly bookings, receipts or expenses."
+    description:
+      "The solution proposed by this application to facilitate the management of a hotel is a cross-platform application that allows, depending on the role of the logged in user to perform different operations such as booking a room, viewing the history, adding reviews, approve reservations, view user or staff profiles, or even view statistics on monthly bookings, receipts or expenses.",
   },
   {
     name: "Wellness and fitness App",
     category: "Mobile Development",
     interval: "May 2020",
     technologies: "Java, Android Studio",
-    description: "Aceasta aplicatie a fost creata in scopul..."
+    description:
+      "This Android app was created with the purpose of having in one app the main habits that can improve our lifestyle, more specifically the app suggests according to each person's profile a plan of healthy recipes, a set of daily snacks but also a workout that can be done at home. <br/> <br/> The app is built in Android Studio with Java, authentication and account management is handled by Fireabse, and networks, snacks and workouts are handled by the backend written in C#.",
   },
   {
     name: "Login & Register & Forgot Password pages",
     category: "Web Development",
     interval: "Jun 2023",
     technologies: "HTML, CSS, JS",
-    description: "Aceasta aplicatie a fost creata in scopul..."
+    description:
+      "Over time we have created various components that I can reuse in other projects, and one of these components is the classic flow that any larger application should have, namely login, registration or forget password page. <br/>In the attached picture you can see such an example made in HTML, CSS and JS. <br/> <br/>It wasn't difficult to do as long as you keep a color palette that blends well together, keep the look of the page elements as clean as possible, add padding and margins and last but not least make your pages responsive! What does this mean? It means not to have fixed sizes for the elements of the page (fields, images, text), and that depending on the size of the screen on which the page is viewed to look good, to shrink or enlarge the elements as needed and to be as visible and user friendly as possible regardless of the device. ",
   },
   {
     name: "Online shopping app",
     category: "Web Development",
     interval: "Jun 2023 - Jul 2023",
-    technologies: "Java, Android Studio",
-    description: "Aceasta aplicatie a fost creata in scopul..."
-  }
-]
-
+    technologies: "React, HTML, SCSS, JavaScript",
+    description: "This application is a prototype of an online shopping website made in React, with the aim of learning and expanding my knowledge in other areas than what I have done so far, namely Angular. ",
+  },
+];
 
 // element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-
+const elementToggleFunc = function (elem) {
+  elem.classList.toggle("active");
+};
 
 // sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
 // sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
+sidebarBtn.addEventListener("click", function () {
+  elementToggleFunc(sidebar);
+});
 
 // testimonials variables
 const projectsItem = document.querySelectorAll("[data-projects-item]");
@@ -62,11 +64,10 @@ const modalText = document.querySelector("[data-modal-text]");
 const testimonialsModalFunc = function () {
   modalContainer.classList.toggle("active");
   overlay.classList.toggle("active");
-}
+};
 
 // add click event to all modal items
 for (let i = 0; i < projectsItem.length; i++) {
-
   projectsItem[i].addEventListener("click", function () {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
@@ -76,17 +77,12 @@ for (let i = 0; i < projectsItem.length; i++) {
     modalText.innerHTML = projects[i].description;
 
     testimonialsModalFunc();
-
   });
-
 }
 
 // add click event to modal close button
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
-
-
-
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -94,17 +90,17 @@ const selectItems = document.querySelectorAll("[data-select-item]");
 const selectValue = document.querySelector("[data-selecct-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-select.addEventListener("click", function () { elementToggleFunc(this); });
+select.addEventListener("click", function () {
+  elementToggleFunc(this);
+});
 
 // add event in all select items
 for (let i = 0; i < selectItems.length; i++) {
   selectItems[i].addEventListener("click", function () {
-
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     elementToggleFunc(select);
     filterFunc(selectedValue);
-
   });
 }
 
@@ -112,9 +108,7 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
-
   for (let i = 0; i < filterItems.length; i++) {
-
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
     } else if (selectedValue === filterItems[i].dataset.category) {
@@ -122,18 +116,14 @@ const filterFunc = function (selectedValue) {
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
-
-}
+};
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
     let selectedValue = this.innerText.toLowerCase();
     selectValue.innerText = this.innerText;
     filterFunc(selectedValue);
@@ -141,12 +131,8 @@ for (let i = 0; i < filterBtn.length; i++) {
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
-
 }
-
-
 
 // contact form variables
 const form = document.querySelector("[data-form]");
@@ -156,18 +142,14 @@ const formBtn = document.querySelector("[data-form-btn]");
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
-
     // check form validation
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
     } else {
       formBtn.setAttribute("disabled", "");
     }
-
   });
 }
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -176,7 +158,6 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-
     for (let i = 0; i < pages.length; i++) {
       if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
         pages[i].classList.add("active");
@@ -187,7 +168,5 @@ for (let i = 0; i < navigationLinks.length; i++) {
         navigationLinks[i].classList.remove("active");
       }
     }
-
   });
 }
-
