@@ -31,6 +31,13 @@ const projects = [
     technologies: "React, HTML, SCSS, JavaScript",
     description: "This application is a prototype of an online shopping website made in React, with the aim of learning and expanding my knowledge in other areas than what I have done so far, namely Angular. ",
   },
+  {
+    name: "Recipes Prediction App",
+    category: "Web Development",
+    interval: "Sep 2023 - Present",
+    technologies: "Angular PWA, Tailwind, Firebase, RestAPI with Java, Spring Boot, PostgreSQL, Docker, Python",
+    description: "Do you face the problem of food every day? Do you waste minutes or even hours looking for something you like? Have you found something you like the way it looks but don't have the ingredients or don't have enough time to prepare it? This app helps you recommend recipes based on your profile and preferences (age, height, weight, favorite foods, allergens, favorite type of food, favorite cuisine, etc). <br/> What is the first step? <br/>A user will be able to create their personalised profile and select the following: <br/> - Age, Height, Weight, Gender <br/> - Preferred cuisine (American, Kid-friendly, Italian, Asian, Mexican, Southern&Soul food, French, Southwestern, Barbecue, Indian, Chinese, Mediterranean, Greek, English, Spanish, Moroccan, Swedish) <br/> - Allergies: Wheat-free, Dairy-free, peanut-free, tree nut-free, sufite-free, soy-free, sesame-free, seafood-free, egg-free, gluten-free <br/> - Do you follow any of the following diets? (Vegetarian, Low Fodmap, Vegan, Paleo, Pescetarian, Ketogenic) <br/> - Are there any ingredients you don't want to see in the recommended recipes? (alcohol, avocado, bacon, bananas, beef, brussels sprouts, cilantro, coconut, eggplant, fish, mayonnaise, mushrooms, olives, onions, pork, potatoes, seafood, shrimp, sugar, tomatoes) <br/> - Your level of cooking skills: beginner, intermediate, advanced <br/> - How would you rate your daily physical effort? Sedentary, Slightly active, Moderately active, Very active, Super active <br/> - What is the reason for ",
+  },
 ];
 
 // element toggle function
