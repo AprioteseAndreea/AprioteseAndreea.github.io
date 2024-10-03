@@ -772,6 +772,33 @@ ul {
    * #clients 
    */
 
+.tech-badge {
+  background-color: hsl(266deg 54% 58% / 45%);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--white-2) !important;
+  display: table;
+}
+
+.timeline-badge {
+  background-color: hsl(0deg 0% 30.24%);
+  padding: 5px 10px;
+  border-radius: 10px;
+  color: var(--white-2);
+  display: inline;
+}
+
+.timeline-date {
+  font-weight: 600;
+  color: var(--light-gray);
+  line-height: 1.6;
+}
+.timeline-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 10px;
+}
 .clients {
   margin-bottom: 15px;
 }
@@ -809,7 +836,9 @@ ul {
 /*-----------------------------------*\
     #RESUME
   \*-----------------------------------*/
-
+ion-icon {
+  color: var(--vegas-gold);
+}
 .article-title {
   margin-bottom: 30px;
 }
@@ -848,7 +877,7 @@ ul {
   margin-bottom: 7px;
 }
 
-.timeline-list span {
+.timeline-subtitle {
   color: var(--vegas-gold);
   font-weight: var(--fw-400);
   line-height: 1.6;
@@ -897,10 +926,15 @@ ul {
 .skills-item:not(:last-child) {
   margin-bottom: 15px;
 }
+.skills-item-two-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
 .skill .title-wrapper {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 5px;
   margin-bottom: 8px;
 }
@@ -1327,8 +1361,8 @@ textarea.form-input::-webkit-resizer {
 /**
    * responsive larger than 450px screen
    */
-@media (min-width: 100px){
-  .modal-img-wrapper{
+@media (min-width: 100px) {
+  .modal-img-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1351,6 +1385,7 @@ textarea.form-input::-webkit-resizer {
   }
   .skills-section {
     flex-flow: wrap;
+    margin-block-start: 20px;
   }
 
   /**
@@ -1361,7 +1396,7 @@ textarea.form-input::-webkit-resizer {
   .blog-banner-box {
     height: auto;
   }
-  .modal-img-wrapper{
+  .modal-img-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -1457,7 +1492,8 @@ textarea.form-input::-webkit-resizer {
   }
 
   .avatar-box img {
-    width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 30px;
   }
 
