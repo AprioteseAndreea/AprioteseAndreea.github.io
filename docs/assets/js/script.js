@@ -4,6 +4,7 @@ const projects = [
     name: "Application for hotel management",
     category: "Mobile Applications",
     interval: "Sept 2020 - Jun 2021",
+    imgSrc: "./assets/images/project-1.png",
     technologies: "Flutter, Dart, Firebase, Android Studio",
     description:
       "The solution proposed by this application to facilitate the management of a hotel is a cross-platform application that allows, depending on the role of the logged in user to perform different operations such as booking a room, viewing the history, adding reviews, approve reservations, view user or staff profiles, or even view statistics on monthly bookings, receipts or expenses.",
@@ -12,6 +13,7 @@ const projects = [
     name: "Wellness and fitness App",
     category: "Mobile Development",
     interval: "May 2020",
+    imgSrc: "./assets/images/project-2.png",
     technologies: "Java, Android Studio",
     description:
       "This Android app was created with the purpose of having in one app the main habits that can improve our lifestyle, more specifically the app suggests according to each person's profile a plan of healthy recipes, a set of daily snacks but also a workout that can be done at home. <br/> <br/> The app is built in Android Studio with Java, authentication and account management is handled by Fireabse, and networks, snacks and workouts are handled by the backend written in C#.",
@@ -20,6 +22,7 @@ const projects = [
     name: "Login & Register & Forgot Password pages",
     category: "Web Development",
     interval: "Jun 2023",
+    imgSrc: "./assets/images/project-3.png",
     technologies: "HTML, CSS, JS",
     description:
       "Over time we have created various components that I can reuse in other projects, and one of these components is the classic flow that any larger application should have, namely login, registration or forget password page. <br/>In the attached picture you can see such an example made in HTML, CSS and JS. <br/> <br/>It wasn't difficult to do as long as you keep a color palette that blends well together, keep the look of the page elements as clean as possible, add padding and margins and last but not least make your pages responsive! What does this mean? It means not to have fixed sizes for the elements of the page (fields, images, text), and that depending on the size of the screen on which the page is viewed to look good, to shrink or enlarge the elements as needed and to be as visible and user friendly as possible regardless of the device. ",
@@ -28,6 +31,7 @@ const projects = [
     name: "Online shopping app",
     category: "Web Development",
     interval: "Jun 2023 - Jul 2023",
+    imgSrc: "./assets/images/project-4.png",
     technologies: "React, HTML, SCSS, JavaScript",
     description: "This application is a prototype of an online shopping website made in React, with the aim of learning and expanding my knowledge in other areas than what I have done so far, namely Angular. ",
   },
@@ -35,6 +39,7 @@ const projects = [
     name: "Recipes Prediction App",
     category: "Web Development",
     interval: "Sep 2023 - Present",
+    imgSrc: "./assets/images/project-5 (1).png",
     technologies: "Angular PWA, Tailwind, Firebase, RestAPI with Java, Spring Boot, PostgreSQL, Docker, Python",
     description: "Do you face the problem of food every day? Do you waste minutes or even hours looking for something you like? Have you found something you like the way it looks but don't have the ingredients or don't have enough time to prepare it? This app helps you recommend recipes based on your profile and preferences (age, height, weight, favorite foods, allergens, favorite type of food, favorite cuisine, etc). <br/> <br> What is the first step?  <br/>A user will be able to create their personalised profile and select the following: <br/> - Age, Height, Weight, Gender <br/> - Preferred cuisine (American, Kid-friendly, Italian, Asian, Mexican, Southern&Soul food, French, Southwestern, Barbecue, Indian, Chinese, Mediterranean, Greek, English, Spanish, Moroccan, Swedish) <br/> - Allergies: Wheat-free, Dairy-free, peanut-free, tree nut-free, sufite-free, soy-free, sesame-free, seafood-free, egg-free, gluten-free <br/> - Do you follow any of the following diets? (Vegetarian, Low Fodmap, Vegan, Paleo, Pescetarian, Ketogenic) <br/> - Are there any ingredients you don't want to see in the recommended recipes? (alcohol, avocado, bacon, bananas, beef, brussels sprouts, cilantro, coconut, eggplant, fish, mayonnaise, mushrooms, olives, onions, pork, potatoes, seafood, shrimp, sugar, tomatoes) <br/> - Your level of cooking skills: beginner, intermediate, advanced <br/> - How would you rate your daily physical effort? Sedentary, Slightly active, Moderately active, Very active, Super active <br/> - What is the reason for installing the app? (to learn to cook, to try new recipes, to save time, to save money, to eat healthy, to lose weight, others) <br> <br> Having this data, it will generate recipes for the next week for each day (breakfast, lunch and dinner). <br> <br> Other features: <br>💡Virtual shopping list for each week that can be adjusted by the user <br> 💡Virtual fridge and recommend recipes and based on the ingredients you already have so you minimize wasted food and money. <br> 💡 We will also try to offer a diversity of recipes and the possibility to add certain recipes to favourites to be recommended more often in the future. <br> Evaluating the nutritional profiles of recipes, as well as calculating personalized nutritional values for each user based on gender, age, height, weight or physical exertion. (e.g. the Harris-Benedict or Mifflin-St Jeo equation that determines the amount of kcals a person should ideally consume in a day)",
   },
@@ -61,7 +66,7 @@ const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
 const overlay = document.querySelector("[data-overlay]");
 
 // modal variable
-const modalImg = document.querySelector("[data-modal-img]");
+const modalImg = document.querySelector("[modal-img-data]");
 const modalTitle = document.querySelector("[data-modal-title]");
 const modalSubtitle = document.querySelector("[data-modal-subtitle]");
 const modalTime = document.querySelector("[data-modal-time]");
@@ -76,8 +81,8 @@ const testimonialsModalFunc = function () {
 // add click event to all modal items
 for (let i = 0; i < projectsItem.length; i++) {
   projectsItem[i].addEventListener("click", function () {
-    modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
-    modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
+    modalImg.src = projects[i].imgSrc;
+    modalImg.alt = projects[i].name;
     modalTitle.innerHTML = projects[i].name;
     modalSubtitle.innerHTML = projects[i].technologies;
     modalTime.innerHTML = projects[i].interval;
